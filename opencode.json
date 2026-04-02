@@ -1,0 +1,132 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "build",
+  "permission": {
+    "edit": "ask",
+    "bash": {
+      "git status": "allow",
+      "git diff": "allow",
+      "git diff --stat": "allow",
+      "git log --oneline -10": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git branch": "allow",
+      "git remote -v": "allow",
+      "ls": "allow",
+      "ls -la": "allow",
+      "cat": "allow",
+      "head": "allow",
+      "tail": "allow",
+      "grep": "allow",
+      "find": "allow",
+      "pwd": "allow",
+      "echo": "allow",
+      "npm test": "allow",
+      "npm run test": "allow",
+      "npm run lint": "allow",
+      "npm run typecheck": "allow",
+      "npm run *": "ask",
+      "npx *": "ask",
+      "php artisan *": "allow",
+      "php artisan migrate --dry-run": "allow",
+      "php artisan tinker --execute": "deny",
+      "composer install": "ask",
+      "composer dump-autoload": "allow",
+      "composer *": "ask",
+      "python -m pytest": "allow",
+      "python manage.py test": "allow",
+      "python -m flake8": "allow",
+      "python *": "ask",
+      "docker-compose *": "ask",
+      "docker *": "ask",
+      "git add *": "ask",
+      "git checkout *": "ask",
+      "git commit *": "ask",
+      "git push *": "ask",
+      "git reset *": "ask",
+      "git revert *": "ask",
+      "rm *": "deny",
+      "rm -rf *": "deny",
+      "sudo *": "deny",
+      "curl *": "deny",
+      "wget *": "deny",
+      "ssh *": "deny",
+      "*": "ask"
+    },
+    "webfetch": "ask",
+    "doom_loop": "deny",
+    "external_directory": "deny",
+    "skill": {
+      "*": "allow",
+      "frontend-development": "allow",
+      "backend-architecture": "allow",
+      "database-architecture": "allow",
+      "fullstack-development": "allow",
+      "javascript-development": "allow",
+      "python-development": "allow",
+      "mobile-development": "allow",
+      "devops-deployment": "allow"
+    }
+  },
+  "mcp": {
+    "memory": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "redis-mcp-server": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--from",
+        "redis-mcp-server@latest",
+        "redis-mcp-server",
+        "--url",
+        "redis://localhost:6379/0"
+      ]
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": ""
+      }
+    }
+  },
+  "plugin": [],
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      ".git/**",
+      "vendor/**",
+      "migrations/**",
+      "storage/**",
+      "dist/**",
+      "build/**",
+      "*.log",
+      ".env*",
+      "*.pyc",
+      "__pycache__/**",
+      ".venv/**",
+      "venv/**"
+    ]
+  },
+  "instructions": [
+    "~/.config/opencode/AGENTS.md"
+  ]
+}
