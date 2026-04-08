@@ -3,6 +3,10 @@
   "default_agent": "build",
   "permission": {
     "edit": "ask",
+    "read": "allow",
+    "external_directory": {
+      "/projects/**": "allow"
+    },
     "bash": {
       "git status": "allow",
       "git diff": "allow",
@@ -55,7 +59,6 @@
     },
     "webfetch": "ask",
     "doom_loop": "deny",
-    "external_directory": "deny",
     "skill": {
       "*": "allow",
       "frontend-development": "allow",
@@ -85,23 +88,32 @@
         "chrome-devtools-mcp@latest"
       ]
     },
-    "redis-mcp-server": {
+    "github": {
       "type": "local",
       "command": [
-        "uvx",
-        "--from",
-        "redis-mcp-server@latest",
-        "redis-mcp-server",
-        "--url",
-        "redis://localhost:6379/0"
-      ]
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "environment": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
     },
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
       "headers": {
-        "CONTEXT7_API_KEY": ""
+        "CONTEXT7_API_KEY": "YOUR_CONTEXT7_API_KEY"
       }
+    },
+    "filesystem": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/projects"
+      ]
     }
   },
   "plugin": [],
