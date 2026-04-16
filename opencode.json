@@ -114,9 +114,19 @@
         "@modelcontextprotocol/server-filesystem",
         "/projects"
       ]
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp",
+      "enabled": true
     }
   },
-  "plugin": [],
+  "plugin": [
+    "@franlol/opencode-md-table-formatter@latest",
+    "opencode-pty@latest",
+    "opencode-vibeguard@latest",
+    "oh-my-openagent@latest"
+  ],
   "compaction": {
     "auto": true,
     "prune": true
