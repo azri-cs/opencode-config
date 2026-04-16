@@ -17,6 +17,9 @@ Nothing here is guaranteed to match upstream OpenCode behavior forever; treat it
 
 ## Using this repo
 
+For Cursor-specific environment variable setup for MCP tokens, see [`docs/cursor-mcp-env-setup.md`](docs/cursor-mcp-env-setup.md).
+
+
 1. **Clone or browse** and copy only the pieces you want into your local OpenCode config directory (typically `~/.config/opencode/` on Linux/macOS).
 
 2. **Merge carefully** if you already have `opencode.json`: permissions, MCP blocks, and `external_directory` rules are opinionated and may conflict with yours.
@@ -33,7 +36,7 @@ Published configs intentionally **omit real credentials**. In `opencode.json` yo
 - `GITHUB_PERSONAL_ACCESS_TOKEN` / `YOUR_GITHUB_PERSONAL_ACCESS_TOKEN`
 - `CONTEXT7_API_KEY` / `YOUR_CONTEXT7_API_KEY`
 
-Replace those with your own secrets via environment variables or your preferred secret manager, and **never commit** real tokens.
+Replace those with your own secrets via environment variables or your preferred secret manager, and **never commit** real tokens. If you want a concrete example for Cursor on Windows + WSL2, see [`docs/cursor-mcp-env-setup.md`](docs/cursor-mcp-env-setup.md).
 
 Before you publish or share your own fork of a config like this:
 
