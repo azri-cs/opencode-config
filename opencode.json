@@ -125,7 +125,7 @@
     "@franlol/opencode-md-table-formatter@latest",
     "opencode-pty@latest",
     "opencode-vibeguard@latest",
-    "oh-my-openagent@latest"
+    "superpowers@git+https://github.com/obra/superpowers.git"
   ],
   "compaction": {
     "auto": true,
